@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash -x
+#!/usr/local/bin/bash 
 declare -A resultContainerDictionary
 decalre -a resultContainerArray
 read -p "Get a:" a
@@ -26,9 +26,6 @@ resultContainerArray[3]=$result3
 
 
 
-
-
-
 echo SHOWING RESULTS FROM DICTIONARY
 
 echo First_Result=${resultContainerDictionary[FirstResult]}
@@ -43,3 +40,15 @@ for((i=0;$i<4;i++))
 do
 	echo ${resultContainerArray[$i]}
 done
+
+
+echo ARRAY : ${resultContainerArray[*]}
+
+
+SortedArrayDescending=( $(
+    for i in "${resultContainerArray[@]}"
+    do
+        echo "$i "
+    done | sort -nr) )
+
+echo SORTED ARRAY IN DESCENDING ORDER : ${SortedArrayDescending[*]}	
