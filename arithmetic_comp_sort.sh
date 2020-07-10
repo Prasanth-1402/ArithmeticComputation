@@ -1,4 +1,5 @@
-#!/bin/bash -x
+#!/usr/local/bin/bash -x
+declare -A resultContainerDictionary
 read -p "Get a:" a
 read -p "Get b:" b
 read -p "Get c:" c
@@ -8,7 +9,13 @@ result1=$(($((c+b))*$a))
 result2=$(($((a/b))+$c))
 result3=$(($((a%b))+$c))
 
-echo First_Result=$result
-echo Second_Result=$result1
-echo Third_Result=$result2
-echo Fourth_Result=$result3
+resultContainerDictionary[FirstResult]=$result
+resultContainerDictionary[SecondResult]=$result1
+resultContainerDictionary[ThirdResult]=$result2
+resultContainerDictionary[FourthResult]=$result3
+
+
+echo First_Result=${resultContainerDictionary[FirstResult]}
+echo Second_Result=${resultContainerDictionary[SecondResult]}
+echo Third_Result=${resultContainerDictionary[ThirdResult]}
+echo Fourth_Result=${resultContainerDictionary[FourthResult]}
