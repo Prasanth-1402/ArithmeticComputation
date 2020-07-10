@@ -52,3 +52,13 @@ SortedArrayDescending=( $(
     done | sort -nr) )
 
 echo SORTED ARRAY IN DESCENDING ORDER : ${SortedArrayDescending[*]}	
+
+
+SortedArrayAscending=( $(
+    for i in "${resultContainerArray[@]}"
+    do
+        echo "$i "
+    done | sort -n) )
+
+echo SORTED ARRAY IN DESCENDING ORDER : ${SortedArrayAscending[*]}
+
