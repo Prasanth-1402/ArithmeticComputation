@@ -3,6 +3,6 @@ read -p "Get a:" a
 read -p "Get b:" b
 read -p "Get c:" c
 
-result=$((a+b*c))
+result=$(($((a+b))*$c))
 
 echo result=$result
